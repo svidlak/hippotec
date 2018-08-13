@@ -1,0 +1,28 @@
+.main-wrapper{
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.languages-wrapper{
+  position: absolute;
+  right: 35px;
+}
+
+.languages-wrapper > span {
+  margin: 0 15px;
+
+}
+
+.languages-wrapper > span:hover {
+  cursor: pointer;
+}
+
+.main-wrapper > mat-form-field, .main-wrapper > input {
+  width: 92%;
+  padding: 30px;
+}
+
+.selected {
+  color: yellow;
+  border-bottom: 1px solid yellow;
+}

@@ -1,0 +1,18 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Flower name: {{flower.name}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="flower['image link']" (mouseover)="largeImage = true" (mouseleave)="largeImage = false" alt="No photo has been loaded">
+  <mat-card-content>
+    <p>
+      Flower name: {{flower.name}}
+    </p>
+    <p>
+      Flower season: {{flower['best season']}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<div class="image-hover" *ngIf="largeImage">
+  <img [src]="flower['image link']" />
+</div>

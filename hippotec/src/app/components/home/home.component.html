@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <span *ngIf="selectedLanguage">{{translates[selectedLanguage]['hello']}}, {{translates[selectedLanguage]['welcome']}} {{translates[selectedLanguage]['flower guide']}}</span>
+  <div *ngIf="languages && languages.length > 0" class="languages-wrapper">
+    <span *ngFor="let lang of languages; let i = index" (click)="changeLang(lang, i)" [ngClass]="{'selected': selectedLanguageEnum === i}">{{lang}}</span>
+  </div>
+</mat-toolbar>
+
+<div *ngIf="flowers.length > 0" class="main-wrapper">
+  <mat-form-field class="example-full-width">
+    <input type="tel" matInput placeholder="Im looking for..." (keyup)="filterFlowers($event)">
+  </mat-form-field>
+
+
+  <div *ngFor="let flower of flowers">
+    <app-flower *ngIf="flower" [flower]="flower"></app-flower>
+  </div>
+</div>
